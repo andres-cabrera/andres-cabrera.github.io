@@ -16,6 +16,25 @@ document.addEventListener('DOMContentLoaded', function() {
         setLanguage('en');
         localStorage.setItem('language', 'en');
     });
+
+    // Add mousemove event to all buttons for light follow effect
+    const buttons = document.querySelectorAll('button');
+    buttons.forEach(button => {
+        button.addEventListener('mousemove', function(e) {
+            const rect = button.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const beforeElement = button.querySelector('::before');
+            button.style.setProperty('--mouse-x', x + 'px');
+            button.style.setProperty('--mouse-y', y + 'px');
+        });
+
+        button.addEventListener('mouseleave', function() {
+            button.style.setProperty('--mouse-x', '50%');
+            button.style.setProperty('--mouse-y', '50%');
+        });
+    });
 });
 
 function setLanguage(lang) {
@@ -40,3 +59,4 @@ function setLanguage(lang) {
     // Update html lang attribute
     document.documentElement.lang = lang;
 }
+
