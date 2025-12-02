@@ -1,95 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Andrés Cabrera</title>
     <link rel="stylesheet" href="index.css">
 </head>
-    <body>
-        <header>
-            <div class="container">
+<body>
+    <header>
+        <div class="container">
             <p class="logo">Andrés Cabrera</p>
             <nav>
-                <a href="#somos-proya">Quién soy?</a>
-                <a href="#nuestros-programas">Mis conocimientos</a>
-                <a href="#servicios">Servicios</a>
+                <a href="#about" data-es="Quién soy?" data-en="About me">Quién soy?</a>
+                <a href="#skills" data-es="Mis conocimientos" data-en="My Knowledge">Mis conocimientos</a>
+                <a href="#services" data-es="Servicios" data-en="Services">Servicios</a>
+                <div class="language-switch">
+                    <button id="lang-es" class="lang-btn active" data-lang="es">🇪🇸 ES</button>
+                    <button id="lang-en" class="lang-btn" data-lang="en">🇬🇧 EN</button>
+                </div>
             </nav>
-            </div>
-        </header>
+        </div>
+    </header>
 
-     <section id="hero">
-        <h1>Obtén asistencia informática <br>a distancia</h1>
-        <form action="https://andres-cabrera.github.io/retroarena/">
-            <button>Demostración Web</button>
-         </form>
-     </section>
+    <section id="hero">
+        <h1 data-es="Obtén asistencia informática <br>a distancia" data-en="Get IT assistance <br>remotely">Obtén asistencia informática <br>a distancia</h1>
+        <a href="https://andres-cabrera.github.io/retroarena/">
+            <button data-es="Demostración Web" data-en="Web Demo">Demostración Web</button>
+        </a>
+    </section>
 
-     <section id="somos-proya">
+    <section id="about">
         <div class="container">
             <div class="img-container"></div>
             <div class="texto">
-
-            <h2>Soy <span 
-            class="color-acento">Andrés!</span></h2>
-            <p>Con más de 10 años de experiencia en IT, especializado en Administración de Sistemas, Análisis de Infraestructura y Desarrollo Web, listo para aportar soluciones tecnológicas de vanguardia a tus proyectos.</p>
+                <h2 data-es="Soy <span class='accent-color'>Andrés!</span>" data-en="I'm <span class='accent-color'>Andrés!</span>">Soy <span class="accent-color">Andrés!</span></h2>
+                <p data-es="Con más de 10 años de experiencia en IT, especializado en Administración de Sistemas, Análisis de Infraestructura y Desarrollo Web, listo para aportar soluciones tecnológicas de vanguardia a tus proyectos." data-en="With over 10 years of IT experience, specialized in Systems Administration, Infrastructure Analysis and Web Development, ready to bring cutting-edge technology solutions to your projects.">Con más de 10 años de experiencia en IT, especializado en Administración de Sistemas, Análisis de Infraestructura y Desarrollo Web, listo para aportar soluciones tecnológicas de vanguardia a tus proyectos.</p>
+            </div>
         </div>
-         </div>
-     </section>
+    </section>
 
-     <section id="nuestros-programas">
+    <section id="skills">
         <div class="container">
-        <h2>Mis conocimientos</h2>
-        <div class="programas">
-        <div class="carta">
-            <h3>Análisis de Infraestructura</h3>
-            <p>Estoy listo para ofrecer soluciones de conectividad de vanguardia que aseguren un rendimiento óptimo en tu infraestructura de red.</p>
-            <form action="https://www.linkedin.com/in/andres-cabrera-it/">
-            <button>+ Info</button>
-            </form>
+            <h2 data-es="Mis conocimientos" data-en="My Knowledge">Mis conocimientos</h2>
+            <div class="skills-grid">
+                <div class="card">
+                    <h3 data-es="Análisis de Infraestructura" data-en="Infrastructure Analysis">Análisis de Infraestructura</h3>
+                    <p data-es="Estoy listo para ofrecer soluciones de conectividad de vanguardia que aseguren un rendimiento óptimo en tu infraestructura de red." data-en="Ready to offer cutting-edge connectivity solutions that ensure optimal performance in your network infrastructure.">Estoy listo para ofrecer soluciones de conectividad de vanguardia que aseguren un rendimiento óptimo en tu infraestructura de red.</p>
+                    <a href="https://www.linkedin.com/in/andres-cabrera-it/">
+                        <button data-es="+ Info" data-en="+ Info">+ Info</button>
+                    </a>
+                </div>
+                <div class="card">
+                    <h3 data-es="Administración de Sistemas" data-en="Systems Administration">Administración de Sistemas</h3>
+                    <p data-es="Cuando se trata de la administración de sistemas y bases de datos, estoy listo para abordar desafíos y encontrar soluciones eficaces." data-en="When it comes to systems and database administration, I'm ready to tackle challenges and find effective solutions.">Cuando se trata de la administración de sistemas y bases de datos, estoy listo para abordar desafíos y encontrar soluciones eficaces.</p>
+                    <a href="https://www.linkedin.com/in/andres-cabrera-it/">
+                        <button data-es="+ Info" data-en="+ Info">+ Info</button>
+                    </a>
+                </div>
+                <div class="card">
+                    <h3 data-es="Desarrollo Web: HTML | CSS | Javascript | React" data-en="Web Development: HTML | CSS | Javascript | React">Desarrollo Web: HTML | CSS | Javascript | React</h3>
+                    <p data-es="Cuando se trata de abordar desafíos en el desarrollo web, tengo experiencia en la resolución de problemas utilizando HTML, CSS, JavaScript y React para lograr soluciones efectivas." data-en="When it comes to tackling web development challenges, I have experience solving problems using HTML, CSS, JavaScript and React to achieve effective solutions.">Cuando se trata de abordar desafíos en el desarrollo web, tengo experiencia en la resolución de problemas utilizando HTML, CSS, JavaScript y React para lograr soluciones efectivas.</p>
+                    <a href="https://www.linkedin.com/in/andres-cabrera-it/">
+                        <button data-es="+ Info" data-en="+ Info">+ Info</button>
+                    </a>
+                </div>
+            </div>
         </div>
-        <div class="carta">
-            <h3>Administración de Sistemas</h3>
-            <p>Cuando se trata de la administración de sistemas y bases de datos, estoy listo para abordar desafíos y encontrar soluciones eficaces.</p>
-            <form action="https://www.linkedin.com/in/andres-cabrera-it/">
-                <button>+ Info</button>
-                </form>
-        </div>
-        <div class="carta">
-            <h3>Desarrollo Web: HTML | CSS | Javascript | React</h3>
-            <p>Cuando se trata de abordar desafíos en el desarrollo web, tengo experiencia en la resolución de problemas utilizando HTML, CSS, JavaScript y React para lograr soluciones efectivas.</p>
-            <form action="https://www.linkedin.com/in/andres-cabrera-it/">
-                <button>+ Info</button>
-                </form>
-         </div>
-         </div>
-        </div>
-     </section>
+    </section>
 
-     <section id="servicios">
+    <section id="services">
         <div class="container">
-        <ul>
-            <li>💼 Experiencia Internacional</li>
-            <li>💻 100% Remoto</li>
-            <li>⏱ Flexibilidad de horarios</li>
-            <li>📅 Gestión de Proyectos</li>
-            <li>🧤 Soporte 1:1</li>
-            <li>🌐 Fluent in English</li>
+            <ul>
+                <li data-es="💼 Experiencia Internacional" data-en="💼 International Experience">💼 Experiencia Internacional</li>
+                <li data-es="💻 100% Remoto" data-en="💻 100% Remote">💻 100% Remoto</li>
+                <li data-es="⏱ Flexibilidad de horarios" data-en="⏱ Flexible Schedule">⏱ Flexibilidad de horarios</li>
+                <li data-es="📅 Gestión de Proyectos" data-en="📅 Project Management">📅 Gestión de Proyectos</li>
+                <li data-es="🧤 Soporte 1:1" data-en="🧤 1:1 Support">🧤 Soporte 1:1</li>
+                <li data-es="🌐 Fluent in English" data-en="🌐 Fluent in English">🌐 Fluent in English</li>
+            </ul>
         </div>
-        </ul>
-     </section>
+    </section>
 
-     <section id="final">
-        <h2>¿Necesitas mi servicio?</h2>
-        <form action="https://www.linkedin.com/in/andres-cabrera-it/">
-            <button>Solicita ya</button>
-            </form>
-     </section>
+    <section id="final">
+        <h2 data-es="¿Necesitas mi servicio?" data-en="Need my service?">¿Necesitas mi servicio?</h2>
+        <a href="https://www.linkedin.com/in/andres-cabrera-it/">
+            <button data-es="Solicita ya" data-en="Request Now">Solicita ya</button>
+        </a>
+    </section>
 
     <footer>
         <div class="container">
             <p>&copy; Powered by andres-cabrera</p>
         </div>
     </footer>
-</body>
 
+    <script src="index.js"></script>
+</body>
 </html>
 
