@@ -6,7 +6,16 @@
     <title>Andrés Cabrera</title>
     <link rel="stylesheet" href="index.css">
 </head>
-<body>
+<body class="page-loading">
+    <!-- Loading screen overlay -->
+    <div class="loading-overlay">
+        <div class="loading-content">
+            <h1>Andrés Cabrera</h1>
+            <div class="loading-spinner"></div>
+            <p>Cargando...</p>
+        </div>
+    </div>
+
     <header>
         <div class="container">
             <p class="logo">Andrés Cabrera</p>
@@ -14,6 +23,7 @@
                 <a href="#about" data-es="Quién soy?" data-en="About me">Quién soy?</a>
                 <a href="#skills" data-es="Mis conocimientos" data-en="My Knowledge">Mis conocimientos</a>
                 <a href="#services" data-es="Servicios" data-en="Services">Servicios</a>
+                <a href="#final" data-es="Contacto" data-en="Contact">Contacto</a>
                 <div class="language-switch">
                     <button id="lang-es" class="lang-btn active" data-lang="es">ES</button>
                     <button id="lang-en" class="lang-btn" data-lang="en">EN</button>
@@ -82,9 +92,9 @@
     </section>
 
     <section id="final">
-        <h2 data-es="¿Necesitas mi servicio?" data-en="Need my service?">¿Necesitas mi servicio?</h2>
+        <h2 data-es="¿Tienes alguna duda o consulta?" data-en="Have a Question or Inquiry?">¿Tienes alguna duda o consulta?</h2>
         <a href="https://www.linkedin.com/in/andres-cabrera-it/">
-            <button data-es="Solicita ya" data-en="Request Now">Solicita ya</button>
+            <button data-es="Contactar" data-en="Contact">Contactar</button>
         </a>
     </section>
 

@@ -1,5 +1,12 @@
-// Language switcher functionality
+// Page loading animation
 document.addEventListener('DOMContentLoaded', function() {
+    // Remove loading screen and show page
+    setTimeout(function() {
+        document.body.classList.remove('page-loading');
+        document.body.classList.add('page-loaded');
+    }, 2000);
+
+    // Language switcher functionality
     // Get saved language or default to 'es'
     const savedLanguage = localStorage.getItem('language') || 'es';
     
