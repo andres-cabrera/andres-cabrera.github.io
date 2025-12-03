@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(function() {
         document.body.classList.remove('page-loading');
         document.body.classList.add('page-loaded');
-    }, 2000);
+    }, 500);
 
     // Language switcher functionality
     // Get saved language or default to 'es'
