@@ -4,6 +4,7 @@
 
 html{
     scroll-behavior: smooth;
+    scroll-padding-top: 0;
 }
 
 body{
@@ -504,7 +505,7 @@ header a:hover {
     background-attachment: fixed;
     color: white;
     text-align: center;
-    padding: 140px 0;
+    padding: 110px 0;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -550,6 +551,7 @@ header a:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 .card:first-child{
@@ -597,6 +599,14 @@ header a:hover {
     font-size: 1.02em;
     line-height: 1.5;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+#skills .card a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    margin-top: auto;
 }
 
 #skills .card a button {
@@ -658,10 +668,45 @@ header a:hover {
     background: linear-gradient(135deg, #f9f9f9 0%, #ececec 100%);
     border-radius: 15px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-    transition: all 0.3s ease;
+    transition: all 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     border-left: 5px solid rgb(50, 70, 130);
     position: relative;
     overflow: hidden;
+    cursor: pointer;
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#services li.service-card {
+    list-style: none;
+    flex-direction: column;
+}
+
+.card-title {
+    font-weight: 600;
+    font-size: 1.15em;
+    color: rgb(30, 30, 60);
+    transition: all 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    text-align: center;
+    opacity: 1;
+    transform: translateY(0);
+    position: relative;
+}
+
+.card-description {
+    font-weight: 500;
+    font-size: 0.95em;
+    color: rgb(50, 70, 130);
+    transition: all 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    text-align: center;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    line-height: 1.5;
+    padding: 0 20px;
+    transform: translateY(10px);
 }
 
 #services li::before {
@@ -678,6 +723,18 @@ header a:hover {
     transform: translateX(10px);
     box-shadow: 0 8px 25px rgba(62, 62, 206, 0.2);
     color: rgb(62, 62, 206);
+    min-height: 180px;
+}
+
+#services li:hover .card-title {
+    opacity: 0;
+    transform: translateY(-20px);
+    pointer-events: none;
+}
+
+#services li:hover .card-description {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 #final{
