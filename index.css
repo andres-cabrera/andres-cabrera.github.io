@@ -182,7 +182,11 @@ button:hover{
     padding: 0 clamp(10px, 2vw, 20px);
 }
 
-.accent-color { color: #3a86ff; }
+.accent-color { 
+    color: #3a86ff;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 0 transparent;
+}
 
 header{
     background-color: rgba(30, 40, 70, 0.95);
@@ -492,6 +496,15 @@ header a:hover {
     align-items: center;
 }
 
+#about .about-content:hover .accent-color {
+    color: #5fa8ff;
+    text-shadow: 0 0 20px rgba(58, 134, 255, 0.8),
+                 0 0 40px rgba(58, 134, 255, 0.5),
+                 0 0 60px rgba(58, 134, 255, 0.3);
+    transform: scale(1.05);
+    display: inline-block;
+}
+
 #about .texto {
     width: 100%;
 }
@@ -505,6 +518,12 @@ header a:hover {
     background-position: center;
     margin: 0 auto 30px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2), 0 0 30px rgba(62, 62, 206, 0.15);
+    filter: brightness(0.85) contrast(1.1) saturate(0.9);
+    transition: filter 0.3s ease;
+}
+
+#about .img-container:hover {
+    filter: brightness(1) contrast(1.05) saturate(1);
 }
 
 #skills{
