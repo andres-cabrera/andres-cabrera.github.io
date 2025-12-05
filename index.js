@@ -6,6 +6,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize particle effect in #final section
     initParticlesEffectFinal();
     
+    // Initialize typewriter effect
+    initTypewriterEffect();
+    
     // Remove loading screen and show page
     setTimeout(function() {
         document.body.classList.remove('page-loading');
@@ -51,13 +54,28 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function setLanguage(lang) {
+    // Save language first
+    localStorage.setItem('language', lang);
+    
     // Update all elements with data-es and data-en attributes
     const elements = document.querySelectorAll('[data-es][data-en]');
     
     elements.forEach(element => {
         const text = element.getAttribute(`data-${lang}`);
         if (text) {
-            element.innerHTML = text;
+            // Skip the typewriter element - it will be handled separately
+            if (element.id === 'typewriter') {
+                return;
+            }
+            // For grow-title, update the inner span to preserve animation structure
+            if (element.classList.contains('grow-title')) {
+                const innerSpan = element.querySelector('.inner');
+                if (innerSpan) {
+                    innerSpan.innerHTML = text;
+                }
+            } else {
+                element.innerHTML = text;
+            }
         }
     });
     
@@ -71,6 +89,11 @@ function setLanguage(lang) {
     
     // Update html lang attribute
     document.documentElement.lang = lang;
+    
+    // Restart typewriter effect with new language
+    if (typeof window.restartTypewriter === 'function') {
+        window.restartTypewriter();
+    }
 }
 
 // ============================================= */
@@ -258,6 +281,7 @@ function initParticlesEffectFinal() {
             const moveX = pos.x + (Math.random() * 20 - 10);
             const moveY = pos.y - Math.random() * 30; // Move upwards
             
+            
             particle.style.left = `${moveX}%`;
             particle.style.top = `${moveY}%`;
             
@@ -268,4 +292,90 @@ function initParticlesEffectFinal() {
         }, delay * 1000);
     }
 }
+
+// ========================================
+// Typewriter Effect for #typewriter element
+// ========================================
+
+function initTypewriterEffect() {
+    const out = document.getElementById('typewriter');
+    if (!out) return;
+    
+    // Get current language
+    const currentLang = localStorage.getItem('language') || 'es';
+    const twText = out.getAttribute(`data-${currentLang}`);
+    
+    if (!twText) return;
+    
+    let idx = 0;
+    const initialDelay = 1400; // wait for title animation (900ms + 400ms delay + buffer)
+    const charDelay = 10; // ms per character
+    
+    const cursorSpan = '<span id="cursor" style="display:inline-block; width:10px; height:1em; background:white; margin-left:6px; vertical-align:bottom; animation: blink 0.7s steps(1) infinite;"></span>';
+    
+    let started = false;
+    let acc = 0;
+    let lastTs = 0;
+    
+    function loop(ts) {
+        if (!lastTs) lastTs = ts;
+        const delta = ts - lastTs;
+        lastTs = ts;
+        
+        if (!started) {
+            acc += delta;
+            if (acc >= initialDelay) {
+                started = true;
+                acc = 0;
+                // show initial cursor immediately
+                out.innerHTML = '' + cursorSpan;
+            } else {
+                typewriterAnimationId = requestAnimationFrame(loop);
+                return;
+            }
+        }
+        
+        acc += delta;
+        let updated = false;
+        while (acc >= charDelay && idx < twText.length) {
+            idx++;
+            acc -= charDelay;
+            updated = true;
+        }
+        if (updated) {
+            out.innerHTML = twText.slice(0, idx) + cursorSpan;
+        }
+        
+        if (idx < twText.length) {
+            typewriterAnimationId = requestAnimationFrame(loop);
+        } else {
+            typewriterAnimationId = null;
+        }
+    }
+    
+    typewriterAnimationId = requestAnimationFrame(loop);
+}
+
+// Store the typewriter effect initialization globally to restart on language change
+let typewriterAnimationId = null;
+
+window.restartTypewriter = function() {
+    const out = document.getElementById('typewriter');
+    if (!out) return;
+    
+    // Cancel any ongoing animation
+    if (typewriterAnimationId) {
+        cancelAnimationFrame(typewriterAnimationId);
+        typewriterAnimationId = null;
+    }
+    
+    // Clear current content
+    out.innerHTML = '';
+    
+    // Small delay to ensure clean restart
+    setTimeout(() => {
+        initTypewriterEffect();
+    }, 50);
+};
+
 
