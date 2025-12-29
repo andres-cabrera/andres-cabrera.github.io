@@ -333,12 +333,14 @@ header a:hover {
     max-width: min(900px, 92vw);
     margin: 0 auto;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: visible;
 }
 
 #about h2 {
     color: white;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     font-weight: 800;
+    padding: 30px 0;
 }
 
 #about p {
@@ -916,7 +918,8 @@ footer .container {
 
     header .container{
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: center;
+        gap: 240px;
     }
 
     header nav {
