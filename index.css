@@ -557,6 +557,91 @@ header a:hover {
     display: inline-block;
 }
 
+/* Stack Section */
+#stack {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: white;
+    text-align: center;
+    padding: 110px 0;
+    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#stack .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+#stack h2 {
+    font-size: 2.5em;
+    margin-bottom: 50px;
+    color: white;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+#stack .carousel-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+}
+
+#stack .swiper {
+    width: 100%;
+    padding: 20px 0;
+}
+
+#stack .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 30px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    height: 180px;
+    width: 180px;
+    pointer-events: none;
+    user-select: none;
+}
+
+#stack .swiper-slide:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(90, 127, 212, 0.3);
+}
+
+#stack .swiper-slide img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    filter: brightness(1.2);
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+#stack .swiper-slide img.logo-large {
+    width: 120px;
+    height: 120px;
+}
+
+#stack .swiper-slide p {
+    margin: 0;
+    font-size: 1em;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+}
+
 #skills{
     background-image: linear-gradient(
         0deg,

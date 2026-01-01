@@ -9,6 +9,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize typewriter effect
     initTypewriterEffect();
     
+    // Initialize Swiper carousel for Stack section
+    initStackCarousel();
+    
     // Remove loading screen and show page
     setTimeout(function() {
         document.body.classList.remove('page-loading');
@@ -377,5 +380,91 @@ window.restartTypewriter = function() {
         initTypewriterEffect();
     }, 50);
 };
+
+// Initialize Stack Carousel with Swiper
+function initStackCarousel() {
+    // Primera fila - movimiento de izquierda a derecha
+    const swiperRow1 = new Swiper('.swiper-row-1', {
+        loop: true,
+        autoplay: {
+            delay: 0,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: false,
+        },
+        speed: 5000,
+        freeMode: true,
+        freeModeMomentum: false,
+        spaceBetween: 30,
+        grabCursor: false,
+        allowTouchMove: false,
+        simulateTouch: false,
+        noSwiping: true,
+        noSwipingClass: 'swiper-slide',
+        breakpoints: {
+            320: {
+                slidesPerView: 2,
+                spaceBetween: 20
+            },
+            640: {
+                slidesPerView: 3,
+                spaceBetween: 25
+            },
+            768: {
+                slidesPerView: 4,
+                spaceBetween: 30
+            },
+            1024: {
+                slidesPerView: 5,
+                spaceBetween: 30
+            },
+            1280: {
+                slidesPerView: 6,
+                spaceBetween: 30
+            }
+        }
+    });
+
+    // Segunda fila - movimiento de derecha a izquierda
+    const swiperRow2 = new Swiper('.swiper-row-2', {
+        loop: true,
+        autoplay: {
+            delay: 0,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: false,
+            reverseDirection: true,
+        },
+        speed: 5000,
+        freeMode: true,
+        freeModeMomentum: false,
+        spaceBetween: 30,
+        grabCursor: false,
+        allowTouchMove: false,
+        simulateTouch: false,
+        noSwiping: true,
+        noSwipingClass: 'swiper-slide',
+        breakpoints: {
+            320: {
+                slidesPerView: 2,
+                spaceBetween: 20
+            },
+            640: {
+                slidesPerView: 3,
+                spaceBetween: 25
+            },
+            768: {
+                slidesPerView: 4,
+                spaceBetween: 30
+            },
+            1024: {
+                slidesPerView: 5,
+                spaceBetween: 30
+            },
+            1280: {
+                slidesPerView: 6,
+                spaceBetween: 30
+            }
+        }
+    });
+}
 
 
